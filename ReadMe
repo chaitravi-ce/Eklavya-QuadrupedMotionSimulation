@@ -7,5 +7,5 @@ We are using CoppeliaSim(V-rep) software for simulation of our model. We are usi
 
 ## Main three sections regarding the study of Quadrupeds:
 * Forward and Inverse Kinematics
-* Gait Generation and Implementation
+* Gait Generation and Implementation 
 * Coding

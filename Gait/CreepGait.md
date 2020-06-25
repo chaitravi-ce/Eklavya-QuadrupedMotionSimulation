@@ -12,4 +12,4 @@ The creep gait is “potentially” very stable, since 3 legs form a stable supp
 6. Again, all the legs shift backward, moving the body forward.
 7. The back-right leg lifts and steps back into the body, bringing us back to the starting position.
 ```
-### (Refer the figure)
+### [Refer the figure](Creep_Gait_Image.PNG)

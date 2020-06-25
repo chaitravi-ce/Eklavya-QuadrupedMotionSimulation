@@ -1,4 +1,5 @@
 --Lua Script
+--Non-threaded Associated Child Script
 
 function sysCall_init()
     -- do some initialization here

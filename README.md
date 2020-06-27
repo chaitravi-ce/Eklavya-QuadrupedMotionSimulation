@@ -24,7 +24,7 @@ The project is about modelling a 4-legged robot which can move forward. The proj
 
 ## About The Project
 
-Quadrupeds are considered stable and comparatively easier  
+Quadrupeds are considered stable and comparatively easier to program than hexapod.
 Refer this [documentation](https://link/to/report/)
 
 ### Tech Stack

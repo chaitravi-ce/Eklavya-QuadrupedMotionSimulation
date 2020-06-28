@@ -63,12 +63,7 @@ git clone https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation.git
 Use the  [Gait Algorithm Code](https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation/tree/master/Codes) as an Associated Non-Threaded Child Script attached to the body of the quadruped. 
 
 ## Results and Demo
-Quadrupeds can be used in a
-[**result screenshots**](https://result.png)  
-
-| Use  |  Table  |
-|:----:|:-------:| 
-| For  | Comparison|
+Quadrupeds can be useful in a variety of situations.
 
 ## Future Work
 
@@ -90,4 +85,4 @@ Quadrupeds can be used in a
 * Refered [this](https://link) for achieving the motion  
 
 ## License
-Describe your [License](LICENSE) for your project. 
+Describe your [License](https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation/blob/master/LICENSE.md) for your project. 

@@ -24,7 +24,8 @@ The project is about modelling a 4-legged robot which can move forward. The proj
 
 ## About The Project
 
-Quadrupeds are considered stable and comparatively easier to program than hexapod.
+Quadrupeds are considered stable and comparatively easier to program than hexapod, They are more stable than biped robot. In this project, we have programmed a quadruped using the creep gait algorithm to move it in the forward direction. Creep Gait Algorithm keeps the centre of gravity (C.O.G) inside the triangular base formed by three legs when one leg is moving. CoppeliaSim software is used to simulate this model with Lua Programming.
+
 Refer this [documentation](https://link/to/report/)
 
 ### Tech Stack
@@ -40,6 +41,7 @@ The project uses Coppeliasim (V-rep) Software for simulation of motion of robot.
     │   └── Inverse Kinematics          
     ├── Codes                   
     ├── LICENSE
+    ├── RESOURCES.md
     ├── README.md 
 
     
@@ -63,7 +65,10 @@ git clone https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation.git
 Use the  [Gait Algorithm Code](https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation/tree/master/Codes) as an Associated Non-Threaded Child Script attached to the body of the quadruped. 
 
 ## Results and Demo
-Quadrupeds can be useful in a variety of situations.
+Quadrupeds can be useful in a variety of situations. Main advantage of quadruped over wheeled robots is, the quadrupeds can move on rough terrains whereas wheeled robots cannot. Quadrupeds can also be used on slopes and stairs, where wheeled robots cannot be used.
+
+### Demo
+[Video of the Project](https://drive.google.com/file/d/14wP4J3AhH0u-MoTKX1THPP_viay8aTmF/view?usp=sharing)
 
 ## Future Work
 
@@ -82,7 +87,7 @@ Quadrupeds can be useful in a variety of situations.
 
 ## Acknowledgements and Resources
 * [SRA VJTI](http://sra.vjti.info/) Eklavya 2020  
-* Refered [this](https://link) for achieving the motion  
+* Refered [this](https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation/blob/master/RESOURCES.md) for achieving the motion  
 
 ## License
-Describe your [License](https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation/blob/master/LICENSE.md) for your project. 
+[MIT License](https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation/blob/master/LICENSE.md). 

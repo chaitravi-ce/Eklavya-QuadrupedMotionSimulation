@@ -39,7 +39,9 @@ The project uses Coppeliasim (V-rep) Software for simulation of motion of robot.
     ├── Kinematics          
     │   ├── Forward Kinematics        
     │   └── Inverse Kinematics          
-    ├── Codes                   
+    ├── Codes
+    ├── Quadruped Model
+    ├── Quadruped CoppeliaSim Scene
     ├── LICENSE
     ├── RESOURCES.md
     ├── README.md 

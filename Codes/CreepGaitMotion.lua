@@ -2,7 +2,6 @@
 --Non-threaded Associated Child Script
 
 function sysCall_init()
-    -- do some initialization here
     l1 = 0.074948
     l2 = 0.097066
     l3 = 0.184358
@@ -24,22 +23,25 @@ function sysCall_init()
     inphase3 = 1
     inphase4 = 1
     inphase6 = 1
-    j1=sim.getObjectHandle('rw_joint1#3')
-    j2=sim.getObjectHandle('rw_joint2#3')
-    j3=sim.getObjectHandle('rw_joint3#3')
-    j4=sim.getObjectHandle('rw_joint4#3')
-    j5=sim.getObjectHandle('rw_joint1#1')
-    j6=sim.getObjectHandle('rw_joint2#1')
-    j7=sim.getObjectHandle('rw_joint3#1')
-    j8=sim.getObjectHandle('rw_joint4#1')
-    j9=sim.getObjectHandle('rw_joint1')
-    j10=sim.getObjectHandle('rw_joint2')
-    j11=sim.getObjectHandle('rw_joint3')
-    j12=sim.getObjectHandle('rw_joint4')
-    j13=sim.getObjectHandle('rw_joint1#2')
-    j14=sim.getObjectHandle('rw_joint2#2')
-    j15=sim.getObjectHandle('rw_joint3#2')
-    j16=sim.getObjectHandle('rw_joint4#2')
+    j1=sim.getObjectHandle('rw_joint1#6')
+    j2=sim.getObjectHandle('rw_joint2#6')
+    j3=sim.getObjectHandle('rw_joint3#6')
+    j4=sim.getObjectHandle('rw_joint4#6')
+    
+    j5=sim.getObjectHandle('rw_joint1#4')
+    j6=sim.getObjectHandle('rw_joint2#4')
+    j7=sim.getObjectHandle('rw_joint3#4')
+    j8=sim.getObjectHandle('rw_joint4#4')
+    
+    j9=sim.getObjectHandle('rw_joint1#0')
+    j10=sim.getObjectHandle('rw_joint2#0')
+    j11=sim.getObjectHandle('rw_joint3#0')
+    j12=sim.getObjectHandle('rw_joint4#0')
+    
+    j13=sim.getObjectHandle('rw_joint1#5')
+    j14=sim.getObjectHandle('rw_joint2#5')
+    j15=sim.getObjectHandle('rw_joint3#5')
+    j16=sim.getObjectHandle('rw_joint4#5')
 end
  
 function sleep(n)
@@ -246,35 +248,51 @@ function sysCall_actuation()
     if(phase == 6) then
         if(inphase6 == 1)then
             print('in in phase 1 6')
-            x4 = x4 - step*0.89
-            y4 = y4 + step
-            z4 = z4 + step*0.121
+            x4 = x4 + step*1.0015
+            y4 = y4 - step
+            z4 = z4 - step*1.703
             set_angle(1,x1,y1,z1)
             set_angle(2,x2,y2,z2)
             set_angle(3,x3,y3,z3)
             set_angle(4,x4,y4,z4)
-            if(y4>=0.0002) then
+            if(y4<=-0.193) then
                 inphase6 = 2
-                print(x4..'x4:0.0134064')
-                print(y4..'y4:0')
-                print(z4..'z4:0.199125')
+                print(x4..'x4:0.193841')
+                print(y4..'y4:-0.193687')
+                print(z4..'z4:0.0617002')
             end
         end
         if(inphase6 == 2) then
             print('in in phase 2 6')
-            x4 = x4 + step
-            y4 = y4
-            z4 = z4 - step*0.09
+            x4 = x4 + step*0.413
+            y4 = y4 + step
+            z4 = z4 
             set_angle(1,x1,y1,z1)
             set_angle(2,x2,y2,z2)
             set_angle(3,x3,y3,z3)
             set_angle(4,x4,y4,z4)
-            if(x4>=0.172) then
+            if(y4>=-0.000001) then
+                inphase6 = 3
+                print(x4..'x4:0.274024')
+                print(y4..'y4:0')
+                print(z4..'z4:0.00617002')
+            end
+        end
+        if(inphase6 == 3) then
+            print('in in phase 3 6')
+            x4 = x4 - step*0.828
+            y4 = y4
+            z4 = z4 + step
+            set_angle(1,x1,y1,z1)
+            set_angle(2,x2,y2,z2)
+            set_angle(3,x3,y3,z3)
+            set_angle(4,x4,y4,z4)
+            if(z4>=0.1838) then
                 inphase6 = 1
+                phase = 7
                 print(x4..'x4:0.172161')
                 print(y4..'y4:0')
                 print(z4..'z4:0.184358')
-                phase = 7
             end
         end
     end

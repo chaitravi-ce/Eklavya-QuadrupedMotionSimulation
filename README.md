@@ -26,7 +26,7 @@ The project is about modelling a 4-legged robot which can move forward. The proj
 
 Quadrupeds are considered stable and comparatively easier to program than hexapod, They are more stable than biped robot. In this project, we have programmed a quadruped using the creep gait algorithm to move it in the forward direction. Creep Gait Algorithm keeps the centre of gravity (C.O.G) inside the triangular base formed by three legs when one leg is moving. CoppeliaSim software is used to simulate this model with Lua Programming.
 
-Refer this [documentation](https://link/to/report/)
+Refer this [documentation](https://github.com/chaitravi-ce/Eklavya-QuadrupedMotionSimulation/blob/master/Quadruped%20Report.pdf)
 
 ### Tech Stack
 The project uses Coppeliasim (V-rep) Software for simulation of motion of robot. For further reference : 

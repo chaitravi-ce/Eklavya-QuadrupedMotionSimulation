@@ -2,11 +2,19 @@
 --Non-threaded Associated Child Script
 
 function sysCall_init()
+
+    --Leg lengths
     l1 = 0.074948
     l2 = 0.097066
     l3 = 0.184358
+
+    --Step change
     step = 0.001
+
+    --Initial phase
     phase = 0
+
+    --Initial Co-ordinates of each leg
     x4 = 0.172161
     y4 = 0
     z4 = 0.184358
@@ -19,10 +27,14 @@ function sysCall_init()
     x3 = 0.172161
     y3 = 0
     z3 = 0.184358
+
+    --Initial sub-phases
     inphase1 = 1
     inphase3 = 1
     inphase4 = 1
     inphase6 = 1
+
+    --Getting object Handles
     j1=sim.getObjectHandle('rw_joint1#6')
     j2=sim.getObjectHandle('rw_joint2#6')
     j3=sim.getObjectHandle('rw_joint3#6')
@@ -49,6 +61,8 @@ function sleep(n)
 end
  
 function sysCall_actuation()
+
+    --Setting initial position
     if(phase == 0) then
         set_angle(1,x1,y1,z1)
         set_angle(2,x2,y2,z2)
@@ -56,6 +70,7 @@ function sysCall_actuation()
         set_angle(4,x4,y4,z4)
         phase = 1
     end
+    --1st Leg movement
     if(phase == 1) then
         --0 0 90 to 0 -45 90
         if(inphase1 == 1) then
@@ -92,6 +107,7 @@ function sysCall_actuation()
             end
         end
     end
+    --Forward Movement
     if(phase == 2) then
         print('in phase 2')
         --leg 3
@@ -130,6 +146,7 @@ function sysCall_actuation()
             phase = 3
         end
     end
+    --Leg Movement
     if(phase == 3) then
         if(inphase3 == 1) then
             print('in in phase 1')
@@ -169,8 +186,8 @@ function sysCall_actuation()
             end
         end
     end
+    --Leg Movement
     if(phase == 4) then
-        --print('phase 4')
         if(inphase4 == 1) then
             print('in in phase 1 4')
             --leg 2
@@ -207,6 +224,7 @@ function sysCall_actuation()
             end
         end
     end
+    --Forward Movement
     if(phase == 5) then
         print('in phase 5')
         --leg 1
@@ -245,6 +263,7 @@ function sysCall_actuation()
             phase = 6
         end
     end
+    --Leg Movement
     if(phase == 6) then
         if(inphase6 == 1)then
             print('in in phase 1 6')
@@ -296,6 +315,7 @@ function sysCall_actuation()
             end
         end
     end
+    --Resetting co-ordinates
     if(phase == 7) then
         x4 = 0.172161
         y4 = 0
@@ -312,7 +332,8 @@ function sysCall_actuation()
         phase = 0
     end
 end
- 
+
+--Inverse Kinematics Calculations
 set_angle = function(jNo,x,y,z)
     jointNo = jNo
     angle1 = math.atan(y/x)
@@ -326,7 +347,8 @@ set_angle = function(jNo,x,y,z)
     angle3 = math.atan2((z-l2*math.sin(angle2)),(fx - l2*math.cos(angle2) - l1))-angle2
     set_position(jointNo,angle1, angle2, angle3)
 end
- 
+
+--Setting angles of servos
 set_position = function(jointNo,angle1,angel2,angle3)
     if(jointNo == 1)then
         s1 = sim.setJointPosition(j1, angle1)
